@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.2 on win32)" generated="20211003 17:05:35.329" rpa="false" schemaversion="2">
+<suite id="s1" name="Test" source="C:\Users\DELL\PycharmProjects\Laz\Test">
+<suite id="s1-s1" name="Forgot Password" source="C:\Users\DELL\PycharmProjects\Laz\Test\Forgot_Password.robot">
+<test id="s1-s1-t1" name="Forgot Password with account not exist">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:05:35.546" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:05:35.546" endtime="20211003 17:05:43.421"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:05:43.421" endtime="20211003 17:05:43.554"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:35.545" endtime="20211003 17:05:43.554"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:05:43.559" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:05:43.558" endtime="20211003 17:05:45.793"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:43.556" endtime="20211003 17:05:45.793"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="login_form"]/div/p[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:05:45.794" level="INFO">Clicking element 'xpath=//*[@id="login_form"]/div/p[1]/a'.</msg>
+<status status="PASS" starttime="20211003 17:05:45.793" endtime="20211003 17:05:47.651"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>thuthuthu@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:05:47.652" level="INFO">Typing text 'thuthuthu@gmail.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:05:47.652" endtime="20211003 17:05:47.743"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="form_forgotpassword"]/fieldset/p/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:05:47.744" level="INFO">Clicking element 'xpath=//*[@id="form_forgotpassword"]/fieldset/p/button'.</msg>
+<status status="PASS" starttime="20211003 17:05:47.743" endtime="20211003 17:05:49.148"/>
+</kw>
+<kw name="Verify Error forgot password with account not exist">
+<kw name="Get Error Forgot Password">
+<var>${Error}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div/div/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:05:49.173" level="INFO">${Error} = There is no account registered for this email address.</msg>
+<status status="PASS" starttime="20211003 17:05:49.150" endtime="20211003 17:05:49.173"/>
+</kw>
+<msg timestamp="20211003 17:05:49.173" level="INFO">${Error} = There is no account registered for this email address.</msg>
+<status status="PASS" starttime="20211003 17:05:49.149" endtime="20211003 17:05:49.173"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>There is no account registered for this email address.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:05:49.173" endtime="20211003 17:05:49.173"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:49.149" endtime="20211003 17:05:49.173"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:05:49.174" endtime="20211003 17:05:51.303"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:05:51.306" endtime="20211003 17:05:51.306"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:51.304" endtime="20211003 17:05:51.306"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:35.545" endtime="20211003 17:05:51.307"/>
+</test>
+<test id="s1-s1-t2" name="Forgot Password with invalid format email">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:05:51.312" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:05:51.312" endtime="20211003 17:05:58.775"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:05:58.776" endtime="20211003 17:05:58.911"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:51.311" endtime="20211003 17:05:58.912"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:05:58.916" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:05:58.915" endtime="20211003 17:06:01.017"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:58.914" endtime="20211003 17:06:01.017"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="login_form"]/div/p[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:06:01.019" level="INFO">Clicking element 'xpath=//*[@id="login_form"]/div/p[1]/a'.</msg>
+<status status="PASS" starttime="20211003 17:06:01.018" endtime="20211003 17:06:02.570"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>thuthuthugmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:06:02.572" level="INFO">Typing text 'thuthuthugmail.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:06:02.571" endtime="20211003 17:06:02.656"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="form_forgotpassword"]/fieldset/p/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:06:02.657" level="INFO">Clicking element 'xpath=//*[@id="form_forgotpassword"]/fieldset/p/button'.</msg>
+<status status="PASS" starttime="20211003 17:06:02.657" endtime="20211003 17:06:04.036"/>
+</kw>
+<kw name="Verify Error forgot password with invalid format email">
+<kw name="Get Error Forgot Password">
+<var>${Error}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div/div/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:06:04.060" level="INFO">${Error} = Invalid email address.</msg>
+<status status="PASS" starttime="20211003 17:06:04.037" endtime="20211003 17:06:04.060"/>
+</kw>
+<msg timestamp="20211003 17:06:04.060" level="INFO">${Error} = Invalid email address.</msg>
+<status status="PASS" starttime="20211003 17:06:04.037" endtime="20211003 17:06:04.060"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Invalid email address.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:06:04.061" endtime="20211003 17:06:04.061"/>
+</kw>
+<status status="PASS" starttime="20211003 17:06:04.036" endtime="20211003 17:06:04.061"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:06:04.062" endtime="20211003 17:06:06.194"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:06:06.197" endtime="20211003 17:06:06.198"/>
+</kw>
+<status status="PASS" starttime="20211003 17:06:06.196" endtime="20211003 17:06:06.198"/>
+</kw>
+<status status="PASS" starttime="20211003 17:05:51.310" endtime="20211003 17:06:06.201"/>
+</test>
+<test id="s1-s1-t3" name="Forgot Password with Email is Blank">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:06:06.207" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:06:06.207" endtime="20211003 17:07:03.289"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:07:03.289" endtime="20211003 17:07:03.411"/>
+</kw>
+<status status="PASS" starttime="20211003 17:06:06.206" endtime="20211003 17:07:03.411"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:03.412" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:07:03.412" endtime="20211003 17:07:05.524"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:03.412" endtime="20211003 17:07:05.524"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="login_form"]/div/p[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:05.525" level="INFO">Clicking element 'xpath=//*[@id="login_form"]/div/p[1]/a'.</msg>
+<status status="PASS" starttime="20211003 17:07:05.525" endtime="20211003 17:07:07.052"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="form_forgotpassword"]/fieldset/p/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:07.053" level="INFO">Clicking element 'xpath=//*[@id="form_forgotpassword"]/fieldset/p/button'.</msg>
+<status status="PASS" starttime="20211003 17:07:07.053" endtime="20211003 17:07:08.479"/>
+</kw>
+<kw name="Verify Error forgot password with Email is blank">
+<kw name="Get Error Forgot Password">
+<var>${Error}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div/div/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:08.509" level="INFO">${Error} = Invalid email address.</msg>
+<status status="PASS" starttime="20211003 17:07:08.482" endtime="20211003 17:07:08.509"/>
+</kw>
+<msg timestamp="20211003 17:07:08.509" level="INFO">${Error} = Invalid email address.</msg>
+<status status="PASS" starttime="20211003 17:07:08.481" endtime="20211003 17:07:08.509"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Invalid email address.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:07:08.509" endtime="20211003 17:07:08.509"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:08.480" endtime="20211003 17:07:08.510"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:07:08.510" endtime="20211003 17:07:10.651"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:07:10.652" endtime="20211003 17:07:10.652"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:10.651" endtime="20211003 17:07:10.652"/>
+</kw>
+<status status="PASS" starttime="20211003 17:06:06.204" endtime="20211003 17:07:10.653"/>
+</test>
+<test id="s1-s1-t4" name="Forgot Password with Email exist">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:07:10.655" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:07:10.655" endtime="20211003 17:07:18.970"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:07:18.971" endtime="20211003 17:07:19.093"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:10.655" endtime="20211003 17:07:19.093"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:19.094" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:07:19.094" endtime="20211003 17:07:21.192"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:19.094" endtime="20211003 17:07:21.193"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="login_form"]/div/p[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:21.194" level="INFO">Clicking element 'xpath=//*[@id="login_form"]/div/p[1]/a'.</msg>
+<status status="PASS" starttime="20211003 17:07:21.194" endtime="20211003 17:07:22.204"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>thu@mailinator.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:22.206" level="INFO">Typing text 'thu@mailinator.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:07:22.205" endtime="20211003 17:07:22.292"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="form_forgotpassword"]/fieldset/p/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:22.293" level="INFO">Clicking element 'xpath=//*[@id="form_forgotpassword"]/fieldset/p/button'.</msg>
+<status status="PASS" starttime="20211003 17:07:22.293" endtime="20211003 17:07:23.486"/>
+</kw>
+<kw name="Verify Forgot Success">
+<arg>thu@mailinator.com</arg>
+<kw name="Get Success Message">
+<var>${Msg}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Mgs}</var>
+<arg>xpath=//*[@id="center_column"]/div/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:23.512" level="INFO">${Mgs} = A confirmation email has been sent to your address: thu@mailinator.com</msg>
+<status status="PASS" starttime="20211003 17:07:23.488" endtime="20211003 17:07:23.512"/>
+</kw>
+<msg timestamp="20211003 17:07:23.512" level="INFO">${Msg} = A confirmation email has been sent to your address: thu@mailinator.com</msg>
+<status status="PASS" starttime="20211003 17:07:23.487" endtime="20211003 17:07:23.512"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Msg}</arg>
+<arg>A confirmation email has been sent to your address: ${Email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:07:23.512" endtime="20211003 17:07:23.513"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:23.487" endtime="20211003 17:07:23.513"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:07:23.513" endtime="20211003 17:07:25.642"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:07:25.645" endtime="20211003 17:07:25.645"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:25.644" endtime="20211003 17:07:25.645"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:10.654" endtime="20211003 17:07:25.647"/>
+</test>
+<status status="PASS" starttime="20211003 17:05:35.357" endtime="20211003 17:07:25.651"/>
+</suite>
+<suite id="s1-s2" name="Login" source="C:\Users\DELL\PycharmProjects\Laz\Test\Login.robot">
+<test id="s1-s2-t1" name="Login with empty email">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:07:25.669" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:07:25.668" endtime="20211003 17:07:34.294"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:07:34.294" endtime="20211003 17:07:34.432"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:25.668" endtime="20211003 17:07:34.432"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:34.436" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:07:34.436" endtime="20211003 17:07:36.492"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:34.435" endtime="20211003 17:07:36.492"/>
+</kw>
+<kw name="Input Password" library="Keyword_Login">
+<arg>123</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=passwd</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:36.493" level="INFO">Typing text '123' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20211003 17:07:36.493" endtime="20211003 17:07:36.575"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:36.493" endtime="20211003 17:07:36.575"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:36.576" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:07:36.576" endtime="20211003 17:07:37.837"/>
+</kw>
+<kw name="Verify Error Empty Email" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:07:37.839" endtime="20211003 17:07:37.849"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:37.867" level="INFO">${Error} = An email address required.</msg>
+<status status="PASS" starttime="20211003 17:07:37.849" endtime="20211003 17:07:37.867"/>
+</kw>
+<msg timestamp="20211003 17:07:37.868" level="INFO">${Error} = An email address required.</msg>
+<status status="PASS" starttime="20211003 17:07:37.838" endtime="20211003 17:07:37.868"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>An email address required.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:07:37.868" endtime="20211003 17:07:37.868"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:37.838" endtime="20211003 17:07:37.868"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:07:37.869" endtime="20211003 17:07:39.984"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:37.869" endtime="20211003 17:07:39.984"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:25.667" endtime="20211003 17:07:39.985"/>
+</test>
+<test id="s1-s2-t2" name="Login with empty password">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:07:39.990" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:07:39.990" endtime="20211003 17:07:48.645"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:07:48.646" endtime="20211003 17:07:48.768"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:39.989" endtime="20211003 17:07:48.769"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:48.771" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:07:48.770" endtime="20211003 17:07:50.907"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:48.770" endtime="20211003 17:07:50.908"/>
+</kw>
+<kw name="Input Email" library="Keyword_Login">
+<arg>thu@mailinator.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:50.909" level="INFO">Typing text 'thu@mailinator.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:07:50.909" endtime="20211003 17:07:50.998"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:50.908" endtime="20211003 17:07:50.998"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:50.999" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:07:50.998" endtime="20211003 17:07:52.600"/>
+</kw>
+<kw name="Verify Error Empty Password" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:07:52.602" endtime="20211003 17:07:52.614"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:07:52.634" level="INFO">${Error} = Password is required.</msg>
+<status status="PASS" starttime="20211003 17:07:52.614" endtime="20211003 17:07:52.634"/>
+</kw>
+<msg timestamp="20211003 17:07:52.635" level="INFO">${Error} = Password is required.</msg>
+<status status="PASS" starttime="20211003 17:07:52.602" endtime="20211003 17:07:52.635"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Password is required.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:07:52.635" endtime="20211003 17:07:52.635"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:52.601" endtime="20211003 17:07:52.635"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:07:52.636" endtime="20211003 17:07:54.767"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:52.636" endtime="20211003 17:07:54.767"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:39.988" endtime="20211003 17:07:54.769"/>
+</test>
+<test id="s1-s2-t3" name="Login with empty email &amp; password">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:07:54.776" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:07:54.775" endtime="20211003 17:08:04.448"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:08:04.448" endtime="20211003 17:08:04.579"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:54.774" endtime="20211003 17:08:04.580"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:04.584" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:08:04.583" endtime="20211003 17:08:07.225"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:04.582" endtime="20211003 17:08:07.226"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:07.226" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:08:07.226" endtime="20211003 17:08:08.487"/>
+</kw>
+<kw name="Verify Error Empty Email &amp; Empty Password" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:08:08.489" endtime="20211003 17:08:08.500"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:08.517" level="INFO">${Error} = An email address required.</msg>
+<status status="PASS" starttime="20211003 17:08:08.500" endtime="20211003 17:08:08.517"/>
+</kw>
+<msg timestamp="20211003 17:08:08.517" level="INFO">${Error} = An email address required.</msg>
+<status status="PASS" starttime="20211003 17:08:08.489" endtime="20211003 17:08:08.517"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>An email address required.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:08:08.517" endtime="20211003 17:08:08.518"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:08.489" endtime="20211003 17:08:08.518"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:08:08.519" endtime="20211003 17:08:10.646"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:08.518" endtime="20211003 17:08:10.647"/>
+</kw>
+<status status="PASS" starttime="20211003 17:07:54.773" endtime="20211003 17:08:10.648"/>
+</test>
+<test id="s1-s2-t4" name="Login with account not exist">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:08:10.654" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:08:10.654" endtime="20211003 17:08:19.065"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:08:19.065" endtime="20211003 17:08:19.194"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:10.653" endtime="20211003 17:08:19.195"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:19.197" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:08:19.197" endtime="20211003 17:08:22.133"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:19.196" endtime="20211003 17:08:22.134"/>
+</kw>
+<kw name="Input Email" library="Keyword_Login">
+<arg>thu1@mailinator.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:22.135" level="INFO">Typing text 'thu1@mailinator.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:08:22.134" endtime="20211003 17:08:22.230"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:22.134" endtime="20211003 17:08:22.230"/>
+</kw>
+<kw name="Input Password" library="Keyword_Login">
+<arg>123</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=passwd</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:22.231" level="INFO">Typing text '123' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20211003 17:08:22.231" endtime="20211003 17:08:22.313"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:22.230" endtime="20211003 17:08:22.314"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:22.315" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:08:22.314" endtime="20211003 17:08:24.170"/>
+</kw>
+<kw name="Verify Error Account not exist" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:08:24.172" endtime="20211003 17:08:24.183"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:24.200" level="INFO">${Error} = Invalid password.</msg>
+<status status="PASS" starttime="20211003 17:08:24.183" endtime="20211003 17:08:24.200"/>
+</kw>
+<msg timestamp="20211003 17:08:24.200" level="INFO">${Error} = Invalid password.</msg>
+<status status="PASS" starttime="20211003 17:08:24.171" endtime="20211003 17:08:24.200"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Invalid password.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:08:24.201" endtime="20211003 17:08:24.201"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:24.171" endtime="20211003 17:08:24.201"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:08:24.202" endtime="20211003 17:08:26.327"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:24.201" endtime="20211003 17:08:26.328"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:10.652" endtime="20211003 17:08:26.328"/>
+</test>
+<test id="s1-s2-t5" name="Login with invalid email &amp; valid password">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:08:26.332" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:08:26.332" endtime="20211003 17:08:35.017"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:08:35.017" endtime="20211003 17:08:35.142"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:26.331" endtime="20211003 17:08:35.142"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:35.143" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:08:35.143" endtime="20211003 17:08:37.934"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:35.143" endtime="20211003 17:08:37.935"/>
+</kw>
+<kw name="Input Email" library="Keyword_Login">
+<arg>thu1@mailinator.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:37.936" level="INFO">Typing text 'thu1@mailinator.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:08:37.936" endtime="20211003 17:08:38.026"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:37.935" endtime="20211003 17:08:38.027"/>
+</kw>
+<kw name="Input Password" library="Keyword_Login">
+<arg>12345</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=passwd</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:38.028" level="INFO">Typing text '12345' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20211003 17:08:38.028" endtime="20211003 17:08:38.110"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:38.027" endtime="20211003 17:08:38.110"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:38.111" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:08:38.111" endtime="20211003 17:08:40.121"/>
+</kw>
+<kw name="Verify Error invalid email &amp; valid password" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:08:40.122" endtime="20211003 17:08:40.134"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:40.151" level="INFO">${Error} = Authentication failed.</msg>
+<status status="PASS" starttime="20211003 17:08:40.134" endtime="20211003 17:08:40.151"/>
+</kw>
+<msg timestamp="20211003 17:08:40.152" level="INFO">${Error} = Authentication failed.</msg>
+<status status="PASS" starttime="20211003 17:08:40.122" endtime="20211003 17:08:40.152"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Authentication failed.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:08:40.152" endtime="20211003 17:08:40.152"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:40.122" endtime="20211003 17:08:40.152"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:08:40.153" endtime="20211003 17:08:42.272"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:40.153" endtime="20211003 17:08:42.273"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:26.331" endtime="20211003 17:08:42.274"/>
+</test>
+<test id="s1-s2-t6" name="Login with valid email &amp; invalid password">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:08:42.280" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:08:42.280" endtime="20211003 17:08:50.107"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:08:50.108" endtime="20211003 17:08:50.229"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:42.279" endtime="20211003 17:08:50.229"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:50.230" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:08:50.230" endtime="20211003 17:08:52.936"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:50.230" endtime="20211003 17:08:52.937"/>
+</kw>
+<kw name="Input Email" library="Keyword_Login">
+<arg>thu@mailinator.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:52.940" level="INFO">Typing text 'thu@mailinator.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:08:52.940" endtime="20211003 17:08:53.038"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:52.938" endtime="20211003 17:08:53.038"/>
+</kw>
+<kw name="Input Password" library="Keyword_Login">
+<arg>12367</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=passwd</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:53.039" level="INFO">Typing text '12367' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20211003 17:08:53.039" endtime="20211003 17:08:53.132"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:53.039" endtime="20211003 17:08:53.133"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:53.133" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:08:53.133" endtime="20211003 17:08:54.632"/>
+</kw>
+<kw name="Verify Error valid email &amp; invalid password" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:08:54.634" endtime="20211003 17:08:54.646"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:08:54.662" level="INFO">${Error} = Authentication failed.</msg>
+<status status="PASS" starttime="20211003 17:08:54.646" endtime="20211003 17:08:54.662"/>
+</kw>
+<msg timestamp="20211003 17:08:54.662" level="INFO">${Error} = Authentication failed.</msg>
+<status status="PASS" starttime="20211003 17:08:54.633" endtime="20211003 17:08:54.662"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Authentication failed.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:08:54.663" endtime="20211003 17:08:54.663"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:54.633" endtime="20211003 17:08:54.663"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:08:54.664" endtime="20211003 17:08:56.767"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:54.664" endtime="20211003 17:08:56.767"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:42.278" endtime="20211003 17:08:56.768"/>
+</test>
+<test id="s1-s2-t7" name="Login with invalid format email">
+<kw name="User Open Browser" library="Common_Keyword" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211003 17:08:56.771" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211003 17:08:56.771" endtime="20211003 17:09:04.328"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 17:09:04.328" endtime="20211003 17:09:04.449"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:56.771" endtime="20211003 17:09:04.449"/>
+</kw>
+<kw name="Go to Login page" library="Keyword_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:09:04.450" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]'.</msg>
+<status status="PASS" starttime="20211003 17:09:04.449" endtime="20211003 17:09:08.256"/>
+</kw>
+<status status="PASS" starttime="20211003 17:09:04.449" endtime="20211003 17:09:08.256"/>
+</kw>
+<kw name="Input Email" library="Keyword_Login">
+<arg>thugmail.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211003 17:09:08.257" level="INFO">Typing text 'thugmail.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211003 17:09:08.257" endtime="20211003 17:09:08.344"/>
+</kw>
+<status status="PASS" starttime="20211003 17:09:08.257" endtime="20211003 17:09:08.344"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=SubmitLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:09:08.345" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<status status="PASS" starttime="20211003 17:09:08.344" endtime="20211003 17:09:09.655"/>
+</kw>
+<kw name="Verify Error invalid format email" library="Keyword_Login">
+<kw name="Get Error" library="Keyword_Login">
+<var>${Error}</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211003 17:09:09.657" endtime="20211003 17:09:09.668"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error}</var>
+<arg>xpath=//*[@id="center_column"]/div[1]/ol/li</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211003 17:09:09.684" level="INFO">${Error} = Invalid email address.</msg>
+<status status="PASS" starttime="20211003 17:09:09.668" endtime="20211003 17:09:09.684"/>
+</kw>
+<msg timestamp="20211003 17:09:09.684" level="INFO">${Error} = Invalid email address.</msg>
+<status status="PASS" starttime="20211003 17:09:09.656" endtime="20211003 17:09:09.684"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error}</arg>
+<arg>Invalid email address.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211003 17:09:09.684" endtime="20211003 17:09:09.685"/>
+</kw>
+<status status="PASS" starttime="20211003 17:09:09.656" endtime="20211003 17:09:09.685"/>
+</kw>
+<kw name="User Close Browser" library="Common_Keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 17:09:09.686" endtime="20211003 17:09:11.800"/>
+</kw>
+<status status="PASS" starttime="20211003 17:09:09.685" endtime="20211003 17:09:11.800"/>
+</kw>
+<status status="PASS" starttime="20211003 17:08:56.770" endtime="20211003 17:09:11.802"/>
+</test>
+<status status="PASS" starttime="20211003 17:07:25.656" endtime="20211003 17:09:11.804"/>
+</suite>
+<status status="PASS" starttime="20211003 17:05:35.331" endtime="20211003 17:09:11.810"/>
+</suite>
+<statistics>
+<total>
+<stat pass="11" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="11" fail="0" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Forgot Password">Test.Forgot Password</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s2" name="Login">Test.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
