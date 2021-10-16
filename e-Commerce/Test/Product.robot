@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Resource/Common_Keyword.robot
-Resource    ../Resource/Keyword_Buy_Product.robot
+Resource    ../Resource/Keyword_Product.robot
 
 Test Setup    User Open Browser
 Test Teardown    User Close Browser
