@@ -2,16 +2,12 @@
 
 1. **Login **
 
-- Create a file .csv to store username data
-
 ![image](https://user-images.githubusercontent.com/53995719/137941902-92595c61-039e-4b5d-a2c9-d233bc2db91b.png)
 
 ![image](https://user-images.githubusercontent.com/53995719/137936452-48efa419-5b31-4988-9525-2b27b4c572c4.png)
 
 
 **2. Forgot Password**
-
-- Using Tag is Smoke for Happy case
 
 ![image](https://user-images.githubusercontent.com/53995719/137942030-434d4c96-5bba-49cd-909b-4c3bb811350d.png)
 
